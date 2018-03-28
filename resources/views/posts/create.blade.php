@@ -19,7 +19,7 @@
 			<label for="body">Message</label>
 		</div>
 		<div class="col-sm-3 align-center">
-	        <input type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Send">			
+	        <input type="submit" id="btn-login" class="btn btn-sm" value="Send">			
 	    </div>	
 		</form>
 
