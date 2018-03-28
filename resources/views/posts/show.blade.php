@@ -9,8 +9,7 @@
         {{$post->body}}
     </div><!-- /.blog-post -->
 
-        <hr>
-
+    <hr>    
 
     @foreach($post->comments as $comment)
         <div class="media">
