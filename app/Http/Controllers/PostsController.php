@@ -14,14 +14,9 @@ class PostsController extends Controller
     	return view('posts.create');
     }
 
-    public function store(Request $request){
+    public function store(){
 	
-		$this->validate($request, [
-			'title' => 'required',
-			'body' => 'required|max:500'
-		]);
-
-		Task::create(['body' => request('body'), 'title' => request('title')]);
+		Post::create(request(['title', 'body']));
 
     	return redirect('/posts');
     }
