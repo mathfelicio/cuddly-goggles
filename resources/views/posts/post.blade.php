@@ -4,6 +4,9 @@
     </h2>
     <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}}</p>
     {{$post->body}}
+
+
+
 </div><!-- /.blog-post -->
 
 <nav class="blog-pagination">

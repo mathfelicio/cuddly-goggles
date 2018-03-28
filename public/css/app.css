@@ -34,6 +34,10 @@ summary {
   display: block;
 }
 
+.media img{
+  padding: 10px;
+}
+
 audio,
 canvas,
 progress,
