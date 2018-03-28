@@ -988,6 +988,7 @@ window.Vue = __webpack_require__(35);
  */
 
 Vue.component('example-component', __webpack_require__(38));
+Vue.component('posts-list', __webpack_require__(53));
 
 var app = new Vue({
   el: '#app'
@@ -43289,6 +43290,170 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */,
+/* 50 */,
+/* 51 */,
+/* 52 */,
+/* 53 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(39)
+/* script */
+var __vue_script__ = __webpack_require__(54)
+/* template */
+var __vue_template__ = __webpack_require__(55)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources\\assets\\js\\components\\PostsList.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-56e36dac", Component.options)
+  } else {
+    hotAPI.reload("data-v-56e36dac", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 54 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            list: [],
+            post: {
+                id: '',
+                title: '',
+                message: ''
+            }
+        };
+    },
+    created: function created() {
+        this.fetchPostList();
+    },
+
+
+    methods: {
+        fetchPostList: function fetchPostList() {
+            var _this = this;
+
+            axios.get('posts').then(function (res) {
+                _this.list = res.data;
+            });
+        },
+        deletePost: function deletePost(id) {
+            var _this2 = this;
+
+            axios.delete('posts/' + id).then(function (res) {
+                _this2.fetchPostList();
+            }).catch(function (err) {
+                return console.error(err);
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 55 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row" }, [
+    _c("h4", [_vm._v("All Posts")]),
+    _vm._v(" "),
+    _c(
+      "ul",
+      { staticClass: "list-group" },
+      [
+        _vm.list.length === 0
+          ? _c("li", [_vm._v("There are no posts yet!")])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm._l(_vm.list, function(post, index) {
+          return _c("li", { staticClass: "list-group-item" }, [
+            _vm._v("\n             " + _vm._s(post.title) + "\n             "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-danger btn-xs pull-right",
+                on: {
+                  click: function($event) {
+                    _vm.deletePost(post.id)
+                  }
+                }
+              },
+              [_vm._v("Delete")]
+            )
+          ])
+        })
+      ],
+      2
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-56e36dac", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

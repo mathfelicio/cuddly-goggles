@@ -15,8 +15,8 @@
 
       <div class="nav-scroller py-1 mb-2">
         <nav class="nav d-flex justify-content-between">
-          <a href="/blog/public/posts" class="p-2 text-muted" >Blog</a>
-          <a href="/blog/public/posts" class="p-2 text-muted">Posts</a>
-          <a href="/blog/public/posts/create" class="p-2 text-muted">Create new Post</a>
+          <a href="/blog/public/api/posts" class="p-2 text-muted" >Blog</a>
+          <a href="/blog/public/api/posts" class="p-2 text-muted">Posts</a>
+          <a href="/blog/public/api/posts/create" class="p-2 text-muted">Create new Post</a>
         </nav>
       </div>
