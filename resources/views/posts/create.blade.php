@@ -10,12 +10,12 @@
 
 			<h2>Create post</h2>
 			<div class="form-group">
-			<input id="title" name="title" type="text" class="form-control" required>
+			<input id="title" name="title" type="text" class="form-control" >
 			<label for="title">Post title</label>
 		</div>
 
 		<div class="form-group">
-			<textarea id="body" name="body" class="form-control" required></textarea>
+			<textarea id="body" name="body" class="form-control" ></textarea>
 			<label for="body">Message</label>
 		</div>
 		<div class="col-sm-3 align-center">
@@ -23,6 +23,7 @@
 	    </div>	
 		</form>
 
+		@include('layouts.errors')
 	</div>
 </div>
 
