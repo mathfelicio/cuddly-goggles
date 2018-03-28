@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use Illuminate\Database\Eloquent\Model;
 
 class PostsController extends Controller
 {
@@ -12,14 +11,24 @@ class PostsController extends Controller
     }
 
     public function create(){
-
     	return view('posts.create');
     }
 
-    public function store(){
+    public function store(Request $request){
+	
+		$this->validate($request, [
+			'title' => 'required',
+			'body' => 'required|max:500'
+		]);
 
-    	Post::create(request(['title, body']));
+		Task::create(['body' => request('body'), 'title' => request('title')]);
 
     	return redirect('/posts');
+    }
+
+    public function destroy($id){
+    	$post = Post::findOrFail($id);
+    	$post->delete();
+    	return 204;
     }
 }
