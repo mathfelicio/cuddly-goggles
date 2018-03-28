@@ -3,7 +3,7 @@
         <h4>All Posts</h4>
         <ul class="list-group">
             <li v-if='list.length === 0'>There are no posts yet!</li>
-            <li class="list-group-item" v-for="(post, index) in list">
+            <li class="list-group-item" v-bind:key="post" v-for="post in list">
                  {{ post.title }}
                  <button @click="deletePost(post.id)" class="btn btn-danger btn-xs pull-right">Delete</button>
             </li>
