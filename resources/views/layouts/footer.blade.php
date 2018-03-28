@@ -1,4 +1,4 @@
- <footer class="footer">
+ <footer class="blog-footer">
   <div class="container text-center">
       <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
       <p>
