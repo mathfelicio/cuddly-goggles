@@ -12,4 +12,12 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class);
     }
+
+    public function addComment($comment)
+    {
+     	$this->comments()->create([
+ 			'title' => request('title'),
+ 			'body' => request('body')
+     	]);
+    }
 }

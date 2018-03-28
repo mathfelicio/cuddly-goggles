@@ -25,4 +25,39 @@
             </div>
         </div>
     @endforeach
+
+    <hr>
+
+    <div class="container">
+    <div class="row">
+        <h3>Send your comment</h3>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="widget-area no-padding blank">
+                <div class="status-upload">
+                    <form method="POST" action="{{$post->id}}/comments">
+                        {{csrf_field()}}
+
+                        <div class="form-group">
+                            <input id="title" name="title" type="text" class="form-control" >
+                            <label for="title">Comment title</label>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="body" name="body" class="form-control" ></textarea>
+                            <label for="body">Message</label>
+                        </div>
+                        
+                        <div class="form-group col-sm-3 align-center">
+                            <input type="submit" id="btn-login" class="btn btn-sm" value="Send">            
+                        </div>  
+                    </form>
+                </div><!-- Status Upload  -->
+            </div><!-- Widget Area -->
+        </div>                      
+    </div>
+</div>
+
 @endsection
